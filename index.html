@@ -1,18 +1,52 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-    <meta charset="UTF-8">
-    <title>跳转中…</title>
+<meta charset="UTF-8">
+<title>正在进入</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- 立刻跳转 -->
-    <meta http-equiv="refresh" content="0;url=https://ppyingyuan.cc">
+<style>
+body {
+  background:#f2f3f5;
+  font-family: Arial;
+}
+.box {
+  margin: 40vh auto 0;
+  width: 90%;
+  max-width: 360px;
+  background: #fff;
+  border-radius: 14px;
+  padding: 22px;
+  text-align: center;
+}
+.btn {
+  display: block;
+  margin-top: 14px;
+  background: #2f4053;
+  color: #fff;
+  padding: 12px;
+  border-radius: 10px;
+  text-decoration: none;
+}
+</style>
 
-    <!-- JS 双保险 -->
-    <script>
-        location.replace("https://ppyingyuan.cc");
-    </script>
+<script>
+let sec = 3;
+let timer = setInterval(() => {
+  document.getElementById("sec").innerText = sec;
+  if (sec-- <= 0) {
+    clearInterval(timer);
+    location.href = "https://ppyingyuan.cc";
+  }
+}, 1000);
+</script>
 </head>
+
 <body>
-正在跳转…
+<div class="box">
+  <h3>正在进入内容</h3>
+  <p><span id="sec">3</span> 秒后自动跳转</p>
+  <a class="btn" href="https://ppyingyuan.cc">立即进入</a>
+</div>
 </body>
 </html>
